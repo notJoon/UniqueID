@@ -109,10 +109,10 @@ impl IdGenerator {
 
     /// helper function to generate id
     fn shift_bits(&self, timestamp: i64, machine_id: i32, server_id: i32, index: usize) -> i64 {
-        // `self.timestamp` is 64 bits, left shift 22 bits to make it 42 bits
-        // `self.machine_id` left shift 17 bits to make it 12 bits
-        // `self.server_id` left shift 12 bits to make it 12 bits
-        // `self.index` is complementing bits.
+        // `timestamp` is 64 bits, left shift 22 bits to make it 42 bits
+        // `machine_id` left shift 17 bits to make it 12 bits
+        // `server_id` left shift 12 bits to make it 12 bits
+        // `index` is complementing bits.
         timestamp << 22
         | (machine_id as i64) << 17
         | (server_id as i64) << 12
